@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   AiOutlineLike,
   AiOutlineComment,
@@ -68,6 +68,18 @@ export function ImageGalleryItem({ el }) {
     </>
   );
 }
+
+ImageGalleryItem.propTypes = {
+  el: PropTypes.shape({
+    webformatURL: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
+    largeImageURL: PropTypes.string.isRequired,
+    likes: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    comments: PropTypes.number.isRequired,
+    downloads: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default ImageGalleryItem;
 
